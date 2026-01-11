@@ -1,20 +1,20 @@
 class Memory < Formula
   desc "MCP server for Obsidian memory integration with Claude"
   homepage "https://github.com/webdesserts/obsidian-memory"
-  version "0.2.0"
+  version "0.2.1"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/webdesserts/obsidian-memory/releases/download/v0.2.0/memory-aarch64-apple-darwin.tar.xz"
-      sha256 "b015024cb17708c6ce9f97f2e13e2cecd347c76187e0efca43b3d07c6e0b6254"
+      url "https://github.com/webdesserts/obsidian-memory/releases/download/v0.2.1/memory-aarch64-apple-darwin.tar.xz"
+      sha256 "a18421d809d9ffe43b9fe811c7c9cff476c1bd3a3754413eb3abd7e3272cf0bc"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/webdesserts/obsidian-memory/releases/download/v0.2.0/memory-x86_64-apple-darwin.tar.xz"
-      sha256 "bce69a3bf4c19f6e8554685a2e40cd8e739889963b3e310501685a0ef20d9c3b"
+      url "https://github.com/webdesserts/obsidian-memory/releases/download/v0.2.1/memory-x86_64-apple-darwin.tar.xz"
+      sha256 "7918d94fd027bdb4a4de47ac6d6526882eb7a00086a1255b9e8fc49bff842090"
     end
   end
   if OS.linux? && Hardware::CPU.intel?
-      url "https://github.com/webdesserts/obsidian-memory/releases/download/v0.2.0/memory-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "67a849ac97a2ecd1cd7a622f8e90e83558ee935c02954db5ac101e923fdc674c"
+      url "https://github.com/webdesserts/obsidian-memory/releases/download/v0.2.1/memory-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "90a5dba31ab90f940e3e561e35b42a29d15ca3a63647df22a8302f02e1921778"
   end
   license "Apache-2.0"
 

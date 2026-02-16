@@ -1,26 +1,33 @@
 class SyncDaemon < Formula
   desc "The sync-daemon application"
-  version "0.2.19"
+  version "0.2.20"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/webdesserts/obsidian-memory/releases/download/v0.2.19/sync-daemon-aarch64-apple-darwin.tar.xz"
-      sha256 "83dc549328766fad6a53b199c9ee29f14b384df92819b86c136710cfc50729e2"
+      url "https://github.com/webdesserts/obsidian-memory/releases/download/v0.2.20/sync-daemon-aarch64-apple-darwin.tar.xz"
+      sha256 "143e61a41a93f8fcaa52801165b7bd41ef451bf6f7cb382282a854fcf324db96"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/webdesserts/obsidian-memory/releases/download/v0.2.19/sync-daemon-x86_64-apple-darwin.tar.xz"
-      sha256 "8980fc7753b4c5fc90e0046fddc47b0ac5ebb02bdb678c335f12bbdca1da005e"
+      url "https://github.com/webdesserts/obsidian-memory/releases/download/v0.2.20/sync-daemon-x86_64-apple-darwin.tar.xz"
+      sha256 "b8e63f3c6c691dd876554c58bd2a1801b819273f9d2fe7fa0e6a4f19eee709b0"
     end
   end
-  if OS.linux? && Hardware::CPU.intel?
-      url "https://github.com/webdesserts/obsidian-memory/releases/download/v0.2.19/sync-daemon-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "94f58875e47576c21e579780fd96cde1c902fc434555f9c918d3fdaf769afcaa"
+  if OS.linux?
+    if Hardware::CPU.arm?
+      url "https://github.com/webdesserts/obsidian-memory/releases/download/v0.2.20/sync-daemon-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "cf7b271fa959caba8ff3dba59fb8719d8d30cc6cc0d33786ecd100e6666c3833"
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/webdesserts/obsidian-memory/releases/download/v0.2.20/sync-daemon-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "f106d264f4581948392ba58e5469d0b045dbdc85f8592b660d81a1157a7179b7"
+    end
   end
   license "Apache-2.0"
 
   BINARY_ALIASES = {
-    "aarch64-apple-darwin":     {},
-    "x86_64-apple-darwin":      {},
-    "x86_64-unknown-linux-gnu": {},
+    "aarch64-apple-darwin":      {},
+    "aarch64-unknown-linux-gnu": {},
+    "x86_64-apple-darwin":       {},
+    "x86_64-unknown-linux-gnu":  {},
   }.freeze
 
   def target_triple
@@ -41,6 +48,7 @@ class SyncDaemon < Formula
   def install
     bin.install "sync-daemon" if OS.mac? && Hardware::CPU.arm?
     bin.install "sync-daemon" if OS.mac? && Hardware::CPU.intel?
+    bin.install "sync-daemon" if OS.linux? && Hardware::CPU.arm?
     bin.install "sync-daemon" if OS.linux? && Hardware::CPU.intel?
 
     install_binary_aliases!

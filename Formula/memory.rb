@@ -1,25 +1,25 @@
 class Memory < Formula
   desc "MCP server for Obsidian memory integration with Claude"
   homepage "https://github.com/webdesserts/obsidian-memory"
-  version "0.2.21"
+  version "0.2.22"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/webdesserts/obsidian-memory/releases/download/v0.2.21/memory-aarch64-apple-darwin.tar.xz"
-      sha256 "f72be6a75004136a94474d623f50d0e90846e0e6bc7d40e02ef1bdf0ca91fbc0"
+      url "https://github.com/webdesserts/obsidian-memory/releases/download/v0.2.22/memory-aarch64-apple-darwin.tar.xz"
+      sha256 "6c06f8cdb06fd47b6893582c41916b4a02f37d5d21daa93e034758cb72f5cba7"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/webdesserts/obsidian-memory/releases/download/v0.2.21/memory-x86_64-apple-darwin.tar.xz"
-      sha256 "a58d79880c4b06f85b9687040759a18097b78cfa76355f7a32d5ea01500fd218"
+      url "https://github.com/webdesserts/obsidian-memory/releases/download/v0.2.22/memory-x86_64-apple-darwin.tar.xz"
+      sha256 "4464d06a0aa8083404498eaa46ae449bef8da62122d6d400cc2c793d426aa9c5"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/webdesserts/obsidian-memory/releases/download/v0.2.21/memory-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "a38810455465a9999a46b2c0e67fa66580202ca48f6e3420ae5b2bea2254ba12"
+      url "https://github.com/webdesserts/obsidian-memory/releases/download/v0.2.22/memory-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "fba60577ef339e9a6c15cd1c42b4843c2177b70c55c7d714664ace065cfa8a17"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/webdesserts/obsidian-memory/releases/download/v0.2.21/memory-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "c90fc23534e60bd372de48f927f0b2214907e7b174335e61b89123223dde16a2"
+      url "https://github.com/webdesserts/obsidian-memory/releases/download/v0.2.22/memory-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "838604460bd409f7a96c7c8b77d005d1898083093ed0855364493d0ecb679e0a"
     end
   end
   license "Apache-2.0"

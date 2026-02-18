@@ -1,24 +1,24 @@
 class SyncDaemon < Formula
   desc "The sync-daemon application"
-  version "0.2.21"
+  version "0.2.22"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/webdesserts/obsidian-memory/releases/download/v0.2.21/sync-daemon-aarch64-apple-darwin.tar.xz"
-      sha256 "0c10ae488c817be9e60593e04c1dcee679e3a4713539b3b0e1600598c10f4e4e"
+      url "https://github.com/webdesserts/obsidian-memory/releases/download/v0.2.22/sync-daemon-aarch64-apple-darwin.tar.xz"
+      sha256 "26e7998ae6070a7211cd5619ffb6e3ec9cfddc66765328fba9a07a536ccc829f"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/webdesserts/obsidian-memory/releases/download/v0.2.21/sync-daemon-x86_64-apple-darwin.tar.xz"
-      sha256 "c0bce8c0366db97f077d8ee34ea96c67cd68a0afa4443afbe90151e3be38364e"
+      url "https://github.com/webdesserts/obsidian-memory/releases/download/v0.2.22/sync-daemon-x86_64-apple-darwin.tar.xz"
+      sha256 "fade63f7c13bb0cf412496e17f86faf35ce9c3b7b607efe7547b9457294fe976"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/webdesserts/obsidian-memory/releases/download/v0.2.21/sync-daemon-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "009afe0e18e2b23a6c815e2d8948a739ab83e86bac5503f259ffd9d5e3b39997"
+      url "https://github.com/webdesserts/obsidian-memory/releases/download/v0.2.22/sync-daemon-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "46020b6b68f3f27b9029aeb45b2a464dbf2b12e9b4af743fd36cd4e755c09bd9"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/webdesserts/obsidian-memory/releases/download/v0.2.21/sync-daemon-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "636873b342b1e9320566af41e676302a1144e17302fab5a6a8085af5aa655834"
+      url "https://github.com/webdesserts/obsidian-memory/releases/download/v0.2.22/sync-daemon-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "50cf75308e936be5822999ec5bf7bdf0340fd5d177c4958853193f437099c9dd"
     end
   end
   license "Apache-2.0"

@@ -1,24 +1,24 @@
 class AuthService < Formula
   desc "OAuth 2.1 + API key authentication service for obsidian-memory"
-  version "0.2.24"
+  version "0.3.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/webdesserts/obsidian-memory/releases/download/v0.2.24/auth-service-aarch64-apple-darwin.tar.xz"
-      sha256 "5aecb0f7d5cfff31e558b8656882039f10b42da57f59e9461ea0d7f8243d0cc7"
+      url "https://github.com/webdesserts/obsidian-memory/releases/download/v0.3.0/auth-service-aarch64-apple-darwin.tar.xz"
+      sha256 "7e1c677de95ebb2cfe841db21a0b232a9d7f25def18587cad262ea7cbcda3633"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/webdesserts/obsidian-memory/releases/download/v0.2.24/auth-service-x86_64-apple-darwin.tar.xz"
-      sha256 "897f5ad3a8581c41b90391df1f3649fe6f24a18bda43396a0e1cf1452861a43c"
+      url "https://github.com/webdesserts/obsidian-memory/releases/download/v0.3.0/auth-service-x86_64-apple-darwin.tar.xz"
+      sha256 "194c85fb30b7936d4df35816fc3d538045edab06c83ea45290b6cf309da377ba"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/webdesserts/obsidian-memory/releases/download/v0.2.24/auth-service-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "30c9d6262f1c32eec41b117d5916e001a0039fff7b09908d5799a045651fd8f9"
+      url "https://github.com/webdesserts/obsidian-memory/releases/download/v0.3.0/auth-service-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "c89309cff7b04f97d8931a7421afd111e1129cd2b6b211c8daaaa08c09ccb717"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/webdesserts/obsidian-memory/releases/download/v0.2.24/auth-service-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "facfdce012cb689dee9ac95897eee9341e850767689d5eab122ff79c26b83200"
+      url "https://github.com/webdesserts/obsidian-memory/releases/download/v0.3.0/auth-service-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "18ed801bb999314d5d87964e216b514fde76ebeeb5d64bfa0e363188c77ef3c6"
     end
   end
   license "Apache-2.0"

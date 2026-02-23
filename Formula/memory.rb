@@ -1,25 +1,25 @@
 class Memory < Formula
   desc "MCP server for Obsidian memory integration with Claude"
   homepage "https://github.com/webdesserts/obsidian-memory"
-  version "0.2.24"
+  version "0.3.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/webdesserts/obsidian-memory/releases/download/v0.2.24/memory-aarch64-apple-darwin.tar.xz"
-      sha256 "deb8160f4aebfc2f56a6e3cb9fcdba3b86cff0958ac969bc4922ae9ce18113bc"
+      url "https://github.com/webdesserts/obsidian-memory/releases/download/v0.3.0/memory-aarch64-apple-darwin.tar.xz"
+      sha256 "cd574b4f9d51ac864dd3568ff531a6f2e6cda310194eeff71952e3d1a2e2a521"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/webdesserts/obsidian-memory/releases/download/v0.2.24/memory-x86_64-apple-darwin.tar.xz"
-      sha256 "2366f114d7b732673e5895cbb168a206774db37c3e7a242047cbae55a3c64c7b"
+      url "https://github.com/webdesserts/obsidian-memory/releases/download/v0.3.0/memory-x86_64-apple-darwin.tar.xz"
+      sha256 "4b2da0dc0ba751c62d4795223ff919b44783c3436f5e3f0abe1d8da78cbe0453"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/webdesserts/obsidian-memory/releases/download/v0.2.24/memory-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "3093f5dad5a776eed2c4ba1308adbe229fb23ae325fd4ec3e666a2429e9b4f78"
+      url "https://github.com/webdesserts/obsidian-memory/releases/download/v0.3.0/memory-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "ca14ec858341cd7b72196a90361e9be5575269c421e6bb59742308e94af08ad5"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/webdesserts/obsidian-memory/releases/download/v0.2.24/memory-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "8d8289d0949064abd25151318cdc48d6926ea725ba1a8636642849721fc9228d"
+      url "https://github.com/webdesserts/obsidian-memory/releases/download/v0.3.0/memory-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "894b15820e67a218520af2887023a092db1d5a8da4ca72582c37a388f85c379c"
     end
   end
   license "Apache-2.0"

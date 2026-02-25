@@ -1,25 +1,25 @@
 class Memory < Formula
   desc "MCP server for Obsidian memory integration with Claude"
   homepage "https://github.com/webdesserts/obsidian-memory"
-  version "0.3.3"
+  version "0.3.4"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/webdesserts/obsidian-memory/releases/download/v0.3.3/memory-aarch64-apple-darwin.tar.xz"
-      sha256 "58034ccfa74198fd4e1cc27d63837ecdec7be4b787ab1bf7ab29422715a99ae2"
+      url "https://github.com/webdesserts/obsidian-memory/releases/download/v0.3.4/memory-aarch64-apple-darwin.tar.xz"
+      sha256 "2ebc0b95d66301238fe1ba7ead1d9c61cc6fc4c6da95be536623a354b8307a85"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/webdesserts/obsidian-memory/releases/download/v0.3.3/memory-x86_64-apple-darwin.tar.xz"
-      sha256 "2e6671d698406806673fb228e95f50fa5e19046b500d64ed3652ea6718126192"
+      url "https://github.com/webdesserts/obsidian-memory/releases/download/v0.3.4/memory-x86_64-apple-darwin.tar.xz"
+      sha256 "b1dec12669b23a383271a19398560fff1175110a93a192f0dddc0a29b03f2cf3"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/webdesserts/obsidian-memory/releases/download/v0.3.3/memory-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "a7a2122c792fa559c3ac5f852b4d7d1634fcf6d10e4573d21da6d556112faf11"
+      url "https://github.com/webdesserts/obsidian-memory/releases/download/v0.3.4/memory-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "33902946e7d7e18e880c6e5130d9dd56d79e0eddde10adebed280b5c6724fd97"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/webdesserts/obsidian-memory/releases/download/v0.3.3/memory-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "dde8024eacbe469210761956e262c773f1051417b17cc2796fd8a9fa1aceb308"
+      url "https://github.com/webdesserts/obsidian-memory/releases/download/v0.3.4/memory-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "6b186abf7c91518000af19c24aa2889599f5f1dfbcb1c670fb5dc6df2d8f80f6"
     end
   end
   license "Apache-2.0"

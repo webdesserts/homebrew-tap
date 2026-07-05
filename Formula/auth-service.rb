@@ -1,24 +1,24 @@
 class AuthService < Formula
   desc "OAuth 2.1 + API key authentication service for obsidian-memory"
-  version "0.5.0"
+  version "0.5.1"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/webdesserts/obsidian-memory/releases/download/v0.5.0/auth-service-aarch64-apple-darwin.tar.xz"
-      sha256 "14ed9e605fb36a2e2cc7827f1aabd8f44a9f2e6dcf484ce8d025839654fc6987"
+      url "https://github.com/webdesserts/obsidian-memory/releases/download/v0.5.1/auth-service-aarch64-apple-darwin.tar.xz"
+      sha256 "fc588a74e98227333de17130d1909049e9abb37563a6beee31762ce5ea6ce9e7"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/webdesserts/obsidian-memory/releases/download/v0.5.0/auth-service-x86_64-apple-darwin.tar.xz"
-      sha256 "cb9235defca89e65739c2b54b77950e62db7a456bf39d0ee6c68dd1ef827bfb4"
+      url "https://github.com/webdesserts/obsidian-memory/releases/download/v0.5.1/auth-service-x86_64-apple-darwin.tar.xz"
+      sha256 "d3b70aa7403779836da1d3d0342da6455cc3050007c3563c888c62f8bbb14415"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/webdesserts/obsidian-memory/releases/download/v0.5.0/auth-service-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "eb7a423deb6b903441b834174a12d8d0a480c77f2802d6c631ab5712ce862c42"
+      url "https://github.com/webdesserts/obsidian-memory/releases/download/v0.5.1/auth-service-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "d308f5605e703975b7683bfcbce96ec1c44fea76ed2f3258ddd4466b92412db9"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/webdesserts/obsidian-memory/releases/download/v0.5.0/auth-service-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "46c0aab96320f95459807b9b27852d14a3001947e41f9cd4cf8f2173eb1206a8"
+      url "https://github.com/webdesserts/obsidian-memory/releases/download/v0.5.1/auth-service-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "bf97b945091de5ece33f9c806497d809c5a42e550cde3d5df076d3435a028683"
     end
   end
   license "Apache-2.0"

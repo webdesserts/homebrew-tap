@@ -1,24 +1,24 @@
 class AuthService < Formula
-  desc "OAuth 2.1 + API key authentication service for obsidian-memory"
-  version "0.5.1"
+  desc "API key authentication service for obsidian-memory"
+  version "0.5.2"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/webdesserts/obsidian-memory/releases/download/v0.5.1/auth-service-aarch64-apple-darwin.tar.xz"
-      sha256 "fc588a74e98227333de17130d1909049e9abb37563a6beee31762ce5ea6ce9e7"
+      url "https://github.com/webdesserts/obsidian-memory/releases/download/v0.5.2/auth-service-aarch64-apple-darwin.tar.xz"
+      sha256 "13dc81372f58d0f728ad66d887fc5d1e1dcd2b461501dbafaae313894e7b0913"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/webdesserts/obsidian-memory/releases/download/v0.5.1/auth-service-x86_64-apple-darwin.tar.xz"
-      sha256 "d3b70aa7403779836da1d3d0342da6455cc3050007c3563c888c62f8bbb14415"
+      url "https://github.com/webdesserts/obsidian-memory/releases/download/v0.5.2/auth-service-x86_64-apple-darwin.tar.xz"
+      sha256 "f14f05368cf718d2ba946757f260f5912e57647a7a78e6b7b412dc546cb4407b"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/webdesserts/obsidian-memory/releases/download/v0.5.1/auth-service-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "d308f5605e703975b7683bfcbce96ec1c44fea76ed2f3258ddd4466b92412db9"
+      url "https://github.com/webdesserts/obsidian-memory/releases/download/v0.5.2/auth-service-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "e4df36d07adfd7c2330ffea5ba53a9b9facaf38b656b20ccb43ad11f923c6c2f"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/webdesserts/obsidian-memory/releases/download/v0.5.1/auth-service-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "bf97b945091de5ece33f9c806497d809c5a42e550cde3d5df076d3435a028683"
+      url "https://github.com/webdesserts/obsidian-memory/releases/download/v0.5.2/auth-service-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "5303921d92eae8a739609c2afc53346e18083ce4dbb6289a9ba5a01646ecea4d"
     end
   end
   license "Apache-2.0"
@@ -46,10 +46,18 @@ class AuthService < Formula
   end
 
   def install
-    bin.install "auth-service" if OS.mac? && Hardware::CPU.arm?
-    bin.install "auth-service" if OS.mac? && Hardware::CPU.intel?
-    bin.install "auth-service" if OS.linux? && Hardware::CPU.arm?
-    bin.install "auth-service" if OS.linux? && Hardware::CPU.intel?
+    if OS.mac? && Hardware::CPU.arm?
+      bin.install "auth-service"
+    end
+    if OS.mac? && Hardware::CPU.intel?
+      bin.install "auth-service"
+    end
+    if OS.linux? && Hardware::CPU.arm?
+      bin.install "auth-service"
+    end
+    if OS.linux? && Hardware::CPU.intel?
+      bin.install "auth-service"
+    end
 
     install_binary_aliases!
 

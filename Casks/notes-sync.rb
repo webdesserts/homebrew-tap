@@ -1,6 +1,6 @@
 cask "notes-sync" do
-  version "0.6.0"
-  sha256 "a2e63eb90be74b96ec2903dbb346b2930aed268c9c846cb8e6168eba584980b3"
+  version "0.6.2"
+  sha256 "9745a8327da81eab3bc0c77892e84076f6b80947b4bbfa2e8696aa9a24849fd5"
 
   url "https://github.com/webdesserts/notes/releases/download/v#{version}/NotesSync_#{version}_universal.dmg"
   name "NotesSync"

@@ -1,25 +1,25 @@
 class NotesSync < Formula
   desc "MCP server and CLI for an Obsidian notes vault"
   homepage "https://github.com/webdesserts/notes"
-  version "0.6.0"
+  version "0.6.2"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/webdesserts/notes/releases/download/v0.6.0/notes-sync-aarch64-apple-darwin.tar.xz"
-      sha256 "600b398e31b90aa0b0e50c4b5492435290e6f7589ecb52df54a7198ad1c80686"
+      url "https://github.com/webdesserts/notes/releases/download/v0.6.2/notes-sync-aarch64-apple-darwin.tar.xz"
+      sha256 "d1a829e0543eeac430e91638b53a87f648193092af4406480bc272a39e229754"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/webdesserts/notes/releases/download/v0.6.0/notes-sync-x86_64-apple-darwin.tar.xz"
-      sha256 "ab664cebe6356f22961d7626deb518844aea3c3b7458efd98d2d28b0d4f2898c"
+      url "https://github.com/webdesserts/notes/releases/download/v0.6.2/notes-sync-x86_64-apple-darwin.tar.xz"
+      sha256 "e71514f557aac9cb0624a0ab477649561ae32b004698670856c77932aa7e2959"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/webdesserts/notes/releases/download/v0.6.0/notes-sync-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "dfd53a32f07dc42307b7dab8654b384f440b095cb950cfac8441d9e8ed918cf2"
+      url "https://github.com/webdesserts/notes/releases/download/v0.6.2/notes-sync-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "3ff361fc0d5dd6877a465f18ee0822e64258fab92af6ca73d9177fa55fa5eff2"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/webdesserts/notes/releases/download/v0.6.0/notes-sync-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "3178c9d907e48cc9e6eebc9497454739205611c21bdbbde371fc1048736d6dcb"
+      url "https://github.com/webdesserts/notes/releases/download/v0.6.2/notes-sync-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "350061eed314c6e7322cf4a1d6f8bf782f8d04ef4f8ce867bdc3197428884f82"
     end
   end
   license "Apache-2.0"

@@ -9,23 +9,37 @@ brew tap webdesserts/tap
 brew install <formula>
 ```
 
-## NotesSync Desktop (`notes-sync`)
+## Desktop apps (single cask each)
 
-NotesSync Desktop (`NotesSync.app`) is a universal (`x86_64` + `arm64`) menu-bar companion for NotesSync. Its cask declares macOS Sonoma as a conservative support floor. This release requires an already configured installation or owner-assisted vault setup before first launch; it does not provide first-run vault selection. Preserve existing settings and vault data. See the [desktop guide](https://github.com/webdesserts/notes/blob/main/crates/desktop/README.md) for the persisted-settings prerequisite and operational details.
+`Mesh.app` and `NotesSync.app` ship **only** as casks. Each cask installs the app bundle and links its command-line interface out of the bundle, so there is no separate formula:
+
+| Cask | App | CLI on `PATH` |
+| --- | --- | --- |
+| `webdesserts/tap/mesh` | `Mesh.app` | `webdesserts-mesh` → `Mesh.app/Contents/MacOS/Mesh` |
+| `webdesserts/tap/notes-sync` | `NotesSync.app` | `notes` → `NotesSync.app/Contents/MacOS/desktop` |
 
 ```sh
+brew install --cask webdesserts/tap/mesh
 brew install --cask webdesserts/tap/notes-sync
 ```
 
-NotesSync is signed with the project's stable self-signed identity and is not Apple notarized. After verifying the intended release and checksum, first launch may require **System Settings → Privacy & Security → Open Anyway**. Approve only the expected unverified-developer warning for NotesSync. Do not remove quarantine, disable Gatekeeper, install a custom trust policy or bypass an unexpected warning.
+The app detects the CLI name it was invoked as (`argv[0]`) and runs the CLI instead of the menu-bar app. The former `webdesserts-mesh` and `notes-sync` formulae are retired. If you installed them, uninstall them before installing the casks: `brew uninstall --formula webdesserts-mesh notes-sync`.
 
-Updates are explicit:
+Both apps are universal (`x86_64` + `arm64`) and declare conservative macOS support floors (macOS Ventura for `mesh`, macOS Sonoma for `notes-sync`). Those floors are reviewed support policies, not proof that every newer macOS release works. NotesSync needs an already configured installation or owner-assisted vault setup before first launch. Settings and vault data are preserved, and legacy settings are migrated to `~/.config/notes/`. See the [NotesSync desktop guide](https://github.com/webdesserts/notes/blob/main/crates/desktop/README.md).
+
+## Trust and first launch
+
+Both apps are signed with the project's stable self-signed identity and are not Apple notarized. The casks' `postflight_steps` clear `com.apple.provenance` and `com.apple.quarantine` from the installed bundle so it does not stall at launch. If macOS still prompts on first launch, verify the release and checksum, then approve it once in **System Settings → Privacy & Security → Open Anyway**. Never approve an unexpected warning.
+
+Replacing the signing certificate changes the trust identity. It requires new validation and may require new user approval. See the [recovery guide](https://github.com/webdesserts/notes/blob/main/crates/desktop/README.md#recovery).
+
+## Updates
+
+Both casks declare `auto_updates true`. Each app updates itself through its signed `tauri-plugin-updater` feed (tray → **Check for Updates**), so `brew upgrade` skips them by default. To force a cask upgrade:
 
 ```sh
 brew update
-brew upgrade --cask webdesserts/tap/notes-sync
+brew upgrade --cask --greedy webdesserts/tap/mesh webdesserts/tap/notes-sync
 ```
 
-A same-signer 0.5.7 → 0.5.8 smoke on macOS 26.6.2 retained quarantine and launched normally without a second blocking approval. This is one host's observation, not a promise that approval persists across every host or release. NotesSync does not restart automatically after an upgrade; quit before upgrading, then relaunch it from Applications or Spotlight.
-
-For recovery and publisher-identity rotation expectations, see the authoritative [desktop install and recovery guide](https://github.com/webdesserts/notes/blob/main/crates/desktop/README.md#recovery). Replacing the signing certificate is a trust-identity change that requires new validation and may require new user approval.
+Each app runs under its own LaunchAgent (`com.webdesserts.mesh`, `com.webdesserts.notes-sync`) and relaunches through launchd after an update.
